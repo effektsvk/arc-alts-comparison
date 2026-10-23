@@ -12,3 +12,5 @@ npm run dev
 ```
 
 All data lives in [`src/data/comparison.ts`](src/data/comparison.ts) — add browsers (columns), categories (tables) and features (rows) there; the page renders whatever is in that file.
+
+Every push to `main` is deployed to Vercel automatically through its Git integration.
