@@ -1,4 +1,5 @@
 import { ComparisonTable, slugify } from "@/components/ComparisonTable";
+import { Footer } from "@/components/Footer";
 import { Scorecards } from "@/components/Scorecards";
 import { StatusBadge, statusOrder } from "@/components/StatusCell";
 import { browsers, categories } from "@/data/comparison";
@@ -44,6 +45,8 @@ export default function Home() {
       {categories.map((category) => (
         <ComparisonTable key={category.name} category={category} browsers={browsers} />
       ))}
+
+      <Footer />
     </main>
   );
 }
