@@ -45,6 +45,12 @@ export const browsers = [
     url: "https://phibrowser.com",
     github: "https://github.com/phibrowser/phibrowser-mac",
   },
+  {
+    id: "stedding",
+    name: "Stedding",
+    url: "https://stedding.dev",
+    github: "https://github.com/ysalitrynskyi/stedding-browser",
+  },
 ] as const satisfies readonly Browser[];
 
 export type BrowserId = (typeof browsers)[number]["id"];
@@ -61,6 +67,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: "yes",
           crest: "yes",
           phi: "yes",
+          stedding: "yes",
         },
       },
       {
@@ -71,6 +78,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: "yes",
           crest: "yes",
           phi: "yes",
+          stedding: { status: "partial", note: "A Space can get its own session (own cookies and site data); passwords and extensions stay shared" },
         },
       },
       {
@@ -81,6 +89,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: { status: "no", note: "A Space is a Profile (1:1)" },
           crest: { status: "no", note: "A Space is a Profile (1:1)" },
           phi: "yes",
+          stedding: "yes",
         },
       },
       {
@@ -91,6 +100,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: "yes",
           crest: "yes",
           phi: "yes",
+          stedding: { status: "yes", note: "The tab moves to the target Space's session and reloads" },
         },
       },
     ],
@@ -109,6 +119,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: "yes",
           crest: { status: "partial", note: "Can jump to the most recent tab, but there's no switcher" },
           phi: "yes",
+          stedding: { status: "yes", note: "Tap for the previous tab, hold for the five most recent" },
         },
       },
       {
@@ -122,6 +133,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: "yes",
           crest: "yes",
           phi: "yes",
+          stedding: "yes",
         },
       },
     ],
@@ -140,6 +152,7 @@ export const categories: Category<BrowserId>[] = [
             note: "No \"Most Recent Space\" option; only matters when \"Open in\" is set to \"Chosen Space\"",
           },
           phi: { status: "yes", note: "No \"Most Recent Space\" option" },
+          stedding: { status: "yes", note: "Per-site rules; a chosen Space for links from other apps is Mac-only for now" },
         },
       },
     ],
@@ -155,6 +168,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: "yes",
           crest: "no",
           phi: "yes",
+          stedding: { status: "yes", note: "On by default; the address bar menu switches to the bare host like Arc" },
         },
       },
       {
@@ -164,6 +178,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: "no",
           crest: "yes",
           phi: "no",
+          stedding: "yes",
         },
       },
     ],
@@ -178,6 +193,7 @@ export const categories: Category<BrowserId>[] = [
           ardia: { status: "partial", note: "Only root bookmarks; all folders were ignored" },
           crest: { status: "yes", note: "Imported everything" },
           phi: { status: "yes", note: "Imported everything via \"Migrate from Another Browser…\"" },
+          stedding: { status: "yes", note: "Spaces, Favorites, pinned tabs, nested folders, history and passwords; macOS only for now" },
         },
       },
     ],
