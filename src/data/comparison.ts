@@ -51,6 +51,12 @@ export const browsers = [
     url: "https://stedding.dev",
     github: "https://github.com/ysalitrynskyi/stedding-browser",
   },
+  {
+    id: "meridian",
+    name: "Meridian",
+    url: "https://meridianbrowser.app",
+    github: "https://github.com/Undermove/meridian-browser",
+  },
 ] as const satisfies readonly Browser[];
 
 export type BrowserId = (typeof browsers)[number]["id"];
@@ -68,6 +74,7 @@ export const categories: Category<BrowserId>[] = [
           crest: "yes",
           phi: "yes",
           stedding: "yes",
+          meridian: "yes",
         },
       },
       {
@@ -79,6 +86,7 @@ export const categories: Category<BrowserId>[] = [
           crest: "yes",
           phi: "yes",
           stedding: { status: "partial", note: "A Space can get its own session (own cookies and site data); passwords and extensions stay shared" },
+          meridian: { status: "yes", note: "A Space can have its own profile with separate cookies and logins" },
         },
       },
       {
@@ -134,6 +142,7 @@ export const categories: Category<BrowserId>[] = [
           crest: "yes",
           phi: "yes",
           stedding: "yes",
+          meridian: "yes",
         },
       },
     ],
@@ -153,6 +162,7 @@ export const categories: Category<BrowserId>[] = [
           },
           phi: { status: "yes", note: "No \"Most Recent Space\" option" },
           stedding: { status: "yes", note: "Per-site rules; a chosen Space for links from other apps is Mac-only for now" },
+          meridian: { status: "yes", note: "Settings › Links: route by domain or pattern" },
         },
       },
     ],
@@ -194,6 +204,7 @@ export const categories: Category<BrowserId>[] = [
           crest: { status: "yes", note: "Imported everything" },
           phi: { status: "yes", note: "Imported everything via \"Migrate from Another Browser…\"" },
           stedding: { status: "yes", note: "Spaces, Favorites, pinned tabs, nested folders, history and passwords; macOS only for now" },
+          meridian: { status: "yes", note: "Spaces, pinned tabs, folders, Favorites, logins, passwords, history and Boosts" },
         },
       },
     ],
